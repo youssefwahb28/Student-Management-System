@@ -1,0 +1,331 @@
+15:31:04 **** Rebuild of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'addStudent':
+..\StudentManagementSystem.c:52:41: error: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+   52 |         struct node *link=(struct node*)malloc(sizeof(struct node));
+      |                                         ^~~~~~
+..\StudentManagementSystem.c:10:1: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+    9 | #include<string.h>
+  +++ |+#include <stdlib.h>
+   10 | 
+..\StudentManagementSystem.c:52:41: warning: incompatible implicit declaration of built-in function 'malloc' [-Wbuiltin-declaration-mismatch]
+   52 |         struct node *link=(struct node*)malloc(sizeof(struct node));
+      |                                         ^~~~~~
+..\StudentManagementSystem.c:52:41: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+..\StudentManagementSystem.c: In function 'displayStudents':
+..\StudentManagementSystem.c:94:67: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+   94 |                         printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.age);
+      |                                                                ~~~^                                                           ~~~~~~~~~~~~~~~~~
+      |                                                                   |                                                                        |
+      |                                                                   double                                                                   int
+      |                                                                %.2d
+..\StudentManagementSystem.c: In function 'searchStudentByID':
+..\StudentManagementSystem.c:117:68: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  117 |                          printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.age);
+      |                                                                 ~~~^                                                           ~~~~~~~~~~~~~~~~~
+      |                                                                    |                                                                        |
+      |                                                                    double                                                                   int
+      |                                                                 %.2d
+..\StudentManagementSystem.c: In function 'updateStudent':
+..\StudentManagementSystem.c:156:41: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+  156 |                                 scanf("%d",current->data.age);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         int *           int
+..\StudentManagementSystem.c:159:41: warning: format '%f' expects argument of type 'float *', but argument 2 has type 'double' [-Wformat=]
+  159 |                                 scanf("%f",current->data.gpa);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         float *         double
+..\StudentManagementSystem.c: In function 'deleteStudent':
+..\StudentManagementSystem.c:243:28: error: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  243 |                            free(deleteNode);
+      |                            ^~~~
+..\StudentManagementSystem.c:243:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c:243:28: warning: incompatible implicit declaration of built-in function 'free' [-Wbuiltin-declaration-mismatch]
+..\StudentManagementSystem.c:243:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c:255:28: warning: incompatible implicit declaration of built-in function 'free' [-Wbuiltin-declaration-mismatch]
+  255 |                            free(deleteNode);
+      |                            ^~~~
+..\StudentManagementSystem.c:255:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:294:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  294 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+15:32:27 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'addStudent':
+..\StudentManagementSystem.c:52:41: error: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+   52 |         struct node *link=(struct node*)malloc(sizeof(struct node));
+      |                                         ^~~~~~
+..\StudentManagementSystem.c:10:1: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+    9 | #include<string.h>
+  +++ |+#include <stdlib.h>
+   10 | 
+..\StudentManagementSystem.c:52:41: warning: incompatible implicit declaration of built-in function 'malloc' [-Wbuiltin-declaration-mismatch]
+   52 |         struct node *link=(struct node*)malloc(sizeof(struct node));
+      |                                         ^~~~~~
+..\StudentManagementSystem.c:52:41: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+..\StudentManagementSystem.c: In function 'searchStudentByID':
+..\StudentManagementSystem.c:117:68: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  117 |                          printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.age);
+      |                                                                 ~~~^                                                           ~~~~~~~~~~~~~~~~~
+      |                                                                    |                                                                        |
+      |                                                                    double                                                                   int
+      |                                                                 %.2d
+..\StudentManagementSystem.c: In function 'updateStudent':
+..\StudentManagementSystem.c:156:41: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+  156 |                                 scanf("%d",current->data.age);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         int *           int
+..\StudentManagementSystem.c:159:41: warning: format '%f' expects argument of type 'float *', but argument 2 has type 'double' [-Wformat=]
+  159 |                                 scanf("%f",current->data.gpa);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         float *         double
+..\StudentManagementSystem.c: In function 'deleteStudent':
+..\StudentManagementSystem.c:243:28: error: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  243 |                            free(deleteNode);
+      |                            ^~~~
+..\StudentManagementSystem.c:243:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c:243:28: warning: incompatible implicit declaration of built-in function 'free' [-Wbuiltin-declaration-mismatch]
+..\StudentManagementSystem.c:243:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c:255:28: warning: incompatible implicit declaration of built-in function 'free' [-Wbuiltin-declaration-mismatch]
+  255 |                            free(deleteNode);
+      |                            ^~~~
+..\StudentManagementSystem.c:255:28: note: include '<stdlib.h>' or provide a declaration of 'free'
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:294:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  294 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+15:32:51 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'searchStudentByID':
+..\StudentManagementSystem.c:118:68: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  118 |                          printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.age);
+      |                                                                 ~~~^                                                           ~~~~~~~~~~~~~~~~~
+      |                                                                    |                                                                        |
+      |                                                                    double                                                                   int
+      |                                                                 %.2d
+..\StudentManagementSystem.c: In function 'updateStudent':
+..\StudentManagementSystem.c:157:41: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+  157 |                                 scanf("%d",current->data.age);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         int *           int
+..\StudentManagementSystem.c:160:41: warning: format '%f' expects argument of type 'float *', but argument 2 has type 'double' [-Wformat=]
+  160 |                                 scanf("%f",current->data.gpa);
+      |                                        ~^  ~~~~~~~~~~~~~~~~~
+      |                                         |               |
+      |                                         float *         double
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+..\StudentManagementSystem.c: In function 'searchHighestGPA':
+..\StudentManagementSystem.c:208:21: warning: 'max' may be used uninitialized [-Wmaybe-uninitialized]
+  208 |                 *max=current->data.gpa;
+      |                 ~~~~^~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:198:12: note: 'max' was declared here
+  198 | {   float *max,id;
+      |            ^~~
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+15:35:05 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+..\StudentManagementSystem.c: In function 'searchHighestGPA':
+..\StudentManagementSystem.c:208:21: warning: 'max' may be used uninitialized [-Wmaybe-uninitialized]
+  208 |                 *max=current->data.gpa;
+      |                 ~~~~^~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:198:12: note: 'max' was declared here
+  198 | {   float *max,id;
+      |            ^~~
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+15:35:44 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+..\StudentManagementSystem.c: In function 'searchHighestGPA':
+..\StudentManagementSystem.c:208:21: warning: 'max' may be used uninitialized [-Wmaybe-uninitialized]
+  208 |                 *max=current->data.gpa;
+      |                 ~~~~^~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:198:12: note: 'max' was declared here
+  198 | {   float *max,id;
+      |            ^~~
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+Info: Nothing to build for StudentManagementSystem
+15:45:02 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+..\StudentManagementSystem.c: In function 'searchHighestGPA':
+..\StudentManagementSystem.c:208:21: warning: 'max' may be used uninitialized [-Wmaybe-uninitialized]
+  208 |                 *max=current->data.gpa;
+      |                 ~~~~^~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:198:12: note: 'max' was declared here
+  198 | {   float *max,id;
+      |            ^~~
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+15:45:54 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+15:46:22 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+15:46:58 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+15:49:29 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+15:51:32 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+15:52:58 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:295:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  295 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+16:08:20 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c: In function 'main':
+..\StudentManagementSystem.c:298:25: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[50]' [-Wformat=]
+  298 |                 scanf("%s",&ptr->name);
+      |                        ~^  ~~~~~~~~~~
+      |                         |  |
+      |                         |  char (*)[50]
+      |                         char *
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+16:08:32 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+16:10:23 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+Info: Nothing to build for StudentManagementSystem
+16:13:38 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+16:15:47 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+Info: Nothing to build for StudentManagementSystem
+16:19:45 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+18:46:58 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+..\StudentManagementSystem.c:93:17: warning: data definition has no type or storage class
+   93 |                 current= head;
+      |                 ^~~~~~~
+..\StudentManagementSystem.c:93:17: error: type defaults to 'int' in declaration of 'current' [-Wimplicit-int]
+..\StudentManagementSystem.c:93:17: error: conflicting types for 'current'; have 'int'
+..\StudentManagementSystem.c:28:14: note: previous definition of 'current' with type 'struct node *'
+   28 | struct node *current =NULL;
+      |              ^~~~~~~
+..\StudentManagementSystem.c:94:17: error: expected identifier or '(' before 'while'
+   94 |                 while(current->next != NULL)
+      |                 ^~~~~
+..\StudentManagementSystem.c:101:24: error: expected declaration specifiers or '...' before string constant
+  101 |                 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:101:65: error: expected declaration specifiers or '...' before 'current'
+  101 |                 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+      |                                                                 ^~~~~~~
+..\StudentManagementSystem.c:101:82: error: expected declaration specifiers or '...' before 'current'
+  101 |                 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+      |                                                                                  ^~~~~~~
+..\StudentManagementSystem.c:101:101: error: expected declaration specifiers or '...' before 'current'
+  101 |                 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+      |                                                                                                     ^~~~~~~
+..\StudentManagementSystem.c:101:119: error: expected declaration specifiers or '...' before 'current'
+  101 |                 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+      |                                                                                                                       ^~~~~~~
+..\StudentManagementSystem.c:102:24: error: expected declaration specifiers or '...' before string constant
+  102 |                 printf("-------------------------------------------\n");
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\StudentManagementSystem.c:103:9: error: expected identifier or '(' before '}' token
+  103 |         }
+      |         ^
+18:48:19 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+18:56:35 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+19:08:25 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+19:15:27 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 

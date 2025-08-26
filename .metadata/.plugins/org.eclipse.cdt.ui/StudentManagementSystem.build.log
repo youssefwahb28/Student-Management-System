@@ -1,0 +1,7 @@
+19:15:27 **** Incremental Build of configuration Debug for project StudentManagementSystem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o StudentManagementSystem.o "..\\StudentManagementSystem.c" 
+gcc -o StudentManagementSystem.exe StudentManagementSystem.o 
+
+19:15:27 Build Finished. 0 errors, 0 warnings. (took 394ms)
+

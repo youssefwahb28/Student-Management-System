@@ -1,0 +1,347 @@
+/********************************************************************
+ Name        : First Project of C Language (Student Management System)
+ Author      : Youssef Mostafa Wahb
+ Date        : 11/8/2025
+ *********************************************************************/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+
+struct student  //the main variables of any student
+{
+	int id;              //Student ID
+	char name[50];       //Student Name
+	int age;             //Student Age
+	float gpa;           //Student GPA
+};
+
+struct node              //Linked list
+{
+	struct student data;      //The Data
+	struct node *next;        //Next Address
+};
+
+struct node *head =NULL;
+struct node *current =NULL;
+
+int checkID(int id);
+
+void addStudent(const struct student *const ptr);
+
+void displayStudents(void);
+
+void searchStudentByID(int id);
+
+void updateStudent(int id);
+
+float calculateAverageGPA(void);
+
+void searchHighestGPA(void);
+
+void deleteStudent(int id);
+
+int main(void)
+{   struct student details;
+    struct student *ptr = &details;
+	int choice,id;
+	printf(" Hello,\n Welcome to the Student Management System \n Please choose what do you want: \n");
+
+	while(1)
+	{
+		printf("----------------------------------------\n");
+		printf(" 1.Add Students\n 2.Display Students\n 3.Search Student By ID\n 4.Update Student Information\n 5.Calculate Average GPA\n 6.Delete Student\n 7.Search For Student With Highest GPA\n 8.Exit\n");
+		printf("Enter your choice: ");
+		fflush(stdout);
+        scanf("%d",&choice);
+		printf("----------------------------------------\n");
+
+        switch(choice)   //Menu Options:
+        {
+        case 1:                              //Add a Student
+        	printf("Enter The student ID : ");
+        	fflush(stdout);
+        	scanf("%d",&ptr->id);
+        	printf("Enter The student Name : ");
+        	fflush(stdout);
+        	scanf("%s",ptr->name);
+        	printf("Enter The student Age : ");
+        	fflush(stdout);
+        	scanf("%d",&ptr->age);
+        	printf("Enter The student GPA : ");
+        	fflush(stdout);
+        	scanf("%f",&ptr->gpa);
+    		printf("----------------------------------------\n");
+        	addStudent(ptr);
+            break;
+
+        case 2:                  //Display All Students
+        	displayStudents();
+            break;
+
+        case 3:                  //Search for a Student by ID
+        	printf("Enter the Student ID that you want to search: ");
+        	fflush(stdout);
+        	scanf("%d",&id);
+        	searchStudentByID(id);
+        	break;
+
+        case 4:                 //Update Student Information
+        	printf("Enter the Student ID that you want to update: ");
+        	fflush(stdout);
+        	scanf("%d",&id);
+        	updateStudent(id);
+        	break;
+
+        case 5:                //Calculate Average GPA
+        	printf("The Average GPA of the Students is %.2f",calculateAverageGPA());
+        	break;
+
+        case 6:               //Delete a Student
+        	printf("Enter the Student ID that you want to Delete: ");
+        	fflush(stdout);
+        	scanf("%d",&id);
+        	deleteStudent(id);
+        	break;
+
+        case 7:                //Find Student with Highest GPA:
+        	searchHighestGPA();
+        	break;
+        case 8:               //Exit
+        	printf("You exit The Program ");
+        	return 0;
+        }
+	}
+}
+
+int checkID(int id)
+{//Check the Id is already in the linked list or not
+	current = head;
+	while(current != NULL)
+	{
+		if(current->data.id == id)
+		{
+		    return 1;
+		}
+		current=current->next;
+	}
+	return 0;
+}
+
+void addStudent(const struct student *const ptr)
+{/*This function collects new student details from the user and adds them to the
+	student linked list.*/
+if(checkID(ptr->id))
+{
+	printf("This ID is exist\n");
+    printf("-------------------------------------------\n");
+	return;
+}
+
+	struct node *link=(struct node*)malloc(sizeof(struct node));
+	if(link == NULL)
+	{
+		printf("Memory allocation failed");
+		 printf("-------------------------------------------\n");
+		return;
+	}
+	else{
+	link->data.id = ptr->id;
+	strcpy(link->data.name , ptr->name);
+	link->data.age = ptr->age;
+	link->data.gpa = ptr->gpa;
+	link->next = NULL;
+	if(head == NULL)
+	{
+		head = link;
+		return;
+	}
+
+	current = head;
+
+	while(current->next != NULL)
+	{
+		current=current->next;
+	}
+	current->next =  link;
+
+	}
+}
+
+void displayStudents(void)
+{//This function displays the details of all students currently in the system.
+	if(head == NULL)
+	{   printf("-------------------------------------------\n");
+		printf("There is no students log in yet \n");
+		 printf("-------------------------------------------\n");
+        return;
+	}
+
+		current= head;
+		while(current->next != NULL)
+		{    printf("-------------------------------------------\n");
+			printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+			current=current->next;
+		}
+		printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+		 printf("-------------------------------------------\n");
+	}
+
+void searchStudentByID(int id)
+{//This function searches for a student by their ID and displays their details if found.
+	if(head == NULL)
+{   printf("-------------------------------------------\n");
+	printf("There is no students log in yet \n");
+	 printf("-------------------------------------------\n");
+    return;
+}
+
+	current = head;
+	while(current != NULL)
+	{
+		if(current->data.id == id)
+		{
+			 printf("-------------------------------------------\n");
+			 printf("ID: %d ,Name: %s ,Age: %d ,GPA:%.2f \n",current->data.id,current->data.name,current->data.age,current->data.gpa);
+				return;
+		}
+		current=current->next;
+	}
+
+		    printf("-------------------------------------------\n");
+			printf("Student with ID %d not found \n",id );
+			printf("-------------------------------------------\n");
+
+}
+
+void updateStudent(int id)
+{
+  //This function updates the details of a student with the given ID.
+	if(head == NULL)
+	{   printf("-------------------------------------------\n");
+		printf("There is no students log in yet \n");
+		printf("-------------------------------------------\n");
+	    return;
+	}
+
+		current = head;
+		while(current != NULL)
+		{
+			if(current->data.id == id)
+			{
+				printf("Enter the new details for the student with ID %d\n",id);
+				printf("-------------------------------------------\n");
+				printf("Enter the new name: ");
+				fflush(stdout);
+				scanf("%s",current->data.name);
+				printf("Enter the new age: ");
+				fflush(stdout);
+				scanf("%d",&current->data.age);
+				printf("Enter the new GPA: ");
+				fflush(stdout);
+				scanf("%f",&current->data.gpa);
+				printf("-------------------------------------------\n");
+				return;
+			}
+			current=current->next;
+		}
+		 printf("-------------------------------------------\n");
+		 printf("Student with ID %d not found \n",id );
+		 printf("-------------------------------------------\n");
+
+}
+
+float calculateAverageGPA(void)
+{//This function calculates and returns ethe average GPA of all students.
+	float sum=0;
+	int count=0;
+	if(head == NULL)
+		{   printf("-------------------------------------------\n");
+			printf("There is no students log in yet \n");
+			printf("-------------------------------------------\n");
+		    return 0.0;
+		}
+			current = head;
+			while(current != NULL)
+			{
+				sum+=current->data.gpa;
+				count++;
+				current=current->next;
+			}
+			return (float)(sum/count);
+		}
+
+void searchHighestGPA(void)
+{   //This function finds and displays the student with the highest GPA.
+	float max,id;
+	if(head == NULL)
+	{   printf("-------------------------------------------\n");
+		printf("There is no students log in yet \n");
+		printf("-------------------------------------------\n");
+	    return;
+	}
+		current = head;
+		max=current->data.gpa;
+		current=current->next;
+		while(current != NULL)
+		{
+			if(max < current->data.gpa)
+			{
+				max = current->data.gpa;
+				id = current->data.id;
+			}
+			current=current->next;
+		}
+		searchStudentByID(id);
+}
+
+void deleteStudent(int id)
+{//This function deletes a student from the linked list by their ID.
+	struct node *deleteNode =NULL;
+	struct node *prev =NULL;
+	current = head->next;
+	prev=head;
+	if(head == NULL)
+			 {  printf("-------------------------------------------\n");
+				printf("There is nothing to delete \n");
+				printf("-------------------------------------------\n");
+			    return ;
+			 }
+	if(head->data.id == id)
+			 {
+			   deleteNode = current;
+			   head=head->next;
+			   current=current->next;
+			   printf("----------------------------------------\n");
+			   printf("Student data is deleted \n");
+			   printf("----------------------------------------\n");
+			   free(deleteNode);
+			   return;
+			  }
+
+		while(current != NULL)
+		{
+		    if(id == current->data.id)
+		    {
+			   deleteNode = current;
+			   prev->next=current->next;
+			   free(deleteNode);
+			   printf("----------------------------------------\n");
+			   printf("Student data is deleted \n");
+			   printf("----------------------------------------\n");
+			   displayStudents();
+			   return;
+	         }
+		    prev=current;
+		    current=current->next;
+
+	}
+	printf("----------------------------------------\n");
+	printf("Student not found \n");
+	printf("----------------------------------------\n");
+}
+
+
+
