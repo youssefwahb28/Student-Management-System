@@ -35,7 +35,7 @@ The system provides a menu-driven interface with the following capabilities:
 ## Project Demo
 
 Watch the system in action:  
-📺 [YouTube Demo](https://youtu.be/SIGfWfT15el)
+ [YouTube Demo](https://youtu.be/SIGfWfT15el)
 
 ---
 
